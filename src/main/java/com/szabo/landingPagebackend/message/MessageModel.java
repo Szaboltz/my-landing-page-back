@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+
 @Entity
 @Data
 public class MessageModel {
@@ -19,5 +20,7 @@ public class MessageModel {
 	private String email;
 	@NotBlank(message = "The message must be insert")
 	private String message;
+
+	private String dateTime;
 
 }
