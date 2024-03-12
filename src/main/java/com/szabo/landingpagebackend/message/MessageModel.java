@@ -1,4 +1,4 @@
-package com.szabo.landingPagebackend.message;
+package com.szabo.landingpagebackend.message;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

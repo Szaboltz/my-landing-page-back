@@ -1,4 +1,4 @@
-package com.szabo.landingPagebackend.message;
+package com.szabo.landingpagebackend.message;
 
 import org.springframework.stereotype.Service;
 
