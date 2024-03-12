@@ -1,4 +1,4 @@
-package com.szabo.landingPagebackend;
+package com.szabo.landingpagebackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
