@@ -1,5 +1,6 @@
 package com.szabo.landingpagebackend.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.szabo.landingpagebackend.modals.MessageModel;
 import com.szabo.landingpagebackend.repositories.MessageRepository;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,16 @@ public class MessageService {
 
 	public MessageService(MessageRepository messageRepository){
 		this.messageRepository = messageRepository;
+	}
+
+	public String convertObjectToString(MessageModel messageModel) {
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			return objectMapper.writeValueAsString(messageModel);
+		} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+		}
 	}
 
 	private String dateToString(LocalDateTime data){
