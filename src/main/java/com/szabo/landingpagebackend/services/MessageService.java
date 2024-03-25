@@ -1,5 +1,7 @@
-package com.szabo.landingpagebackend.message;
+package com.szabo.landingpagebackend.services;
 
+import com.szabo.landingpagebackend.modals.MessageModel;
+import com.szabo.landingpagebackend.repositories.MessageRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -24,3 +26,4 @@ public class MessageService {
 		messageRepository.save(messageModel);
 	}
 }
+
