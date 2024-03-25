@@ -4,7 +4,7 @@ package com.szabo.landingpagebackend.interceptors;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-// import com.szabo.landingpagebackend.email.EmailService;
+// import com.szabo.landingpagebackend.services.EmailService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
