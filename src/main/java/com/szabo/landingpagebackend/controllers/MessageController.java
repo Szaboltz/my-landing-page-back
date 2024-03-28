@@ -1,15 +1,20 @@
 package com.szabo.landingpagebackend.controllers;
 
+import com.szabo.landingpagebackend.messages.Messages;
 import com.szabo.landingpagebackend.modals.MessageModel;
 import com.szabo.landingpagebackend.services.MessageService;
 
 import jakarta.validation.Valid;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.szabo.landingpagebackend.services.EmailService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -23,10 +28,20 @@ public class MessageController {
 
 	@PostMapping("/send")
 	public ResponseEntity<?> create(@Valid @RequestBody MessageModel messageModel) {
-		messageService.validateMessage(messageModel);
-		String json = messageService.convertObjectToString(messageModel);
-		emailService.sendEmail("Sou eu!", json);
+		emailService.sendEmail("New Message!", messageService.formatMessage(messageModel));
 
-		return ResponseEntity.ok(200);
+		Messages messages = new Messages(true, "Menssagem enviada com sucesso!");
+		return ResponseEntity.status(HttpStatus.OK).body(messages);
 	}
+
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Object> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex
+				.getBindingResult()
+				.getFieldErrors()
+				.forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
 }
