@@ -1,5 +1,7 @@
 package com.szabo.landingpagebackend.modals;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,10 +25,10 @@ public class MessageModel {
 	@NotBlank(message = "The email must be insert")
 	private String email;
 
-	@Size(min = 3)
-	@NotBlank(message = "The message must be insert")
+	@Size(min = 3, message = "The message size must be min 3")
+	@NotBlank(message = "The email must be insert")
 	private String message;
 
-	private String dateTime;
+	private LocalDateTime dateTime;
 
 }
