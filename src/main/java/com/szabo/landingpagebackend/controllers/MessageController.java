@@ -23,7 +23,7 @@ import com.szabo.landingpagebackend.services.EmailService;
 public class MessageController {
 	@Autowired
 	private MessageService messageService;
-	@Autowired
+	@Autowired	
 	private EmailService emailService;
 
 	@PostMapping("/send")
