@@ -5,9 +5,9 @@ import lombok.Data;
 @Data
 public class Messages {
   private String message;
-  private Boolean success;
+  private boolean success;
 
-  public Messages (Boolean success, String message) {
+  public Messages (boolean success, String message) {
     this.message = message;
     this.success = success;
   }
