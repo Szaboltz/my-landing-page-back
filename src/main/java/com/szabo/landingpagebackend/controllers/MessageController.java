@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.szabo.landingpagebackend.services.EmailService;
 
-@CrossOrigin(origins = "https://szabo.dev.br", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api")
 public class MessageController {
