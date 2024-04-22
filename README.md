@@ -6,6 +6,4 @@
 - [Spring Framework](https://docs.spring.io/spring-framework/reference/testing/annotations.html)
 - [PostgreSQL](https://www.postgresql.org/)
 
-<div align="center">
-  <iframe width="560" height="315" src="https://drive.google.com/file/d/1fVcYgrDFTIteEjRkcxuPNN9Oqj38b9AG/preview" frameborder="0" allowfullscreen></iframe>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S9-mpiYtHas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
