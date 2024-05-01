@@ -10,12 +10,9 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 @Configuration
 public class MailConfiguration {
-    @Value("${EMAIL}")
-    private String username;
+    String username = System.getenv("EMAIL");
+    String password = System.getenv("PASS");
 
-    @Value("${PASS}")
-    private String password;
-    
     @Bean // Every Bean needs to be public
     JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
